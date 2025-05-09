@@ -13,7 +13,7 @@ This site provides:
 - **Contribution workflow**: submit PDFs/TXT/MDX via PR or form → review → merge  
 - **Goal**: reduce verbal onboarding, preserve institutional knowledge, and streamline co-op training
 
-For full details, see our [Website Plan Document](./Public/Website_Plan.pdf).
+For full details, see our [Website Plan Document](./public/Website_Plan.pdf).
 
 ---
 
