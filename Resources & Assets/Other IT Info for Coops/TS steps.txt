@@ -1,0 +1,186 @@
+* SETTING UP MEETING ROOM 112/113:
+	1. Check if the MEETING ROOMs SPLIT:
+		A. SPLIT: then TVs in each room are separated
+		B. NOT SPLIT: then TVs in each room are SHARED.
+ 
+	IN EACH ROOM ( IF SPLIT ):
+	  2. Go to the tablet and lower the Projector/TV ( "Settings" > "Room 11# Wall Plate" > "On" )
+	  3. Check the volume of the room:
+		A. IF ROOM 112: In bottom-right hand corner of tablet, room volume should be LOW.
+		B. IF ROOM 113: In bottom-right hand corner of tablet, room volume should be HIGH.
+	  4. Log into the computer ( username + password written near the stand )
+	  5. User wants to set up the computer:
+	  	A. COMPANY COMPUTER: Start Teams meeting as meeting room itself.
+	  	B. USER COMPUTER:    Start the Microsoft Teams meeting, but invite the meeting room.
+	  5. On your personal laptop, invite youself into the meeting. Mute yourself, then:
+		- MUTE THE MEETING VOLUME: Check if MEETING MIC works.
+		- MUTE THE MEETING MIC:    Check if MEETING VOLUME works.
+ 
+  COMMON ISSUES
+	A. PROJECT MALFUNC: Unplug + Replug the HDMI cable into the wall outlet
+	B. MIC MALFUNC: Check that the speaker/mic is not muted on the tablet.
+		- If speaker/mic is not synced, grab a new mic
+		- If new mic does not work, restart the system.
+	C. SPEAKER + MIC MALFUNC: Unplug + Replug the HDMI cable & restart the laptop.
+	D. CAMERA MALFUNC:
+		a. ROOM 112: Contact Manvir/Tarun for help
+		b. ROOM 113: NO CAMERA IN THIS MEETING ROOM
+	E. EXECUTIVE MEETING: Go to storage room to set up executive mics
+		- Coops never explained HOW TO DO THIS, so just ask for help.
+ 
+	D. LAPTOP CHARGE: Ask "Jarvis" for a power bar and connect the power into outlets found
+	   underneath the metal lids.
+ 
+ 
+  WORST CASE: Just restart the ENTIRE system in IT room for ~6 minutes.
+ 
+* ONBOARDING PROCESS: 
+	1) Assign the Assets on Cherwell. 
+	2) Check if the user has credentials and if not then reset it from AD.
+	3) One drive setup.
+	4) Microsoft Authenticator setup.
+	5) Give VPN guide (Printed copy) also explain how VPN works and you will get email when you are needed to use Fortitoken.
+ 
+* HOW TO SET UP COMPUTER:
+	1. Log into sdesk account
+	2. Advanced System Settings > System Properties > Advances > User Profile ( Settings )
+	3. For each deletable name, press Delete button.
+		- If you cannot delete the profile, restart the laptop
+	4. Uninstall unnecessary programs LIKE "Adobe Acrobat", "Zoom," "iManage," "Local Administrator," "IBM Notes," "Altia"
+ 
+* WINDOWS PASSWORD RESETS:
+	- Passwords expire after ~90 days
+ 
+	1. Try to do "CTRL + ALT + DELETE > Switch User > Reset Password"
+	2. If that does NOT work, reset password manually!
+		- ALWAYS get TEAM MEMBER'S PERMISSION FIRST to reset password
+	3. Upon password reset, if the person is working from home, use the OLD password. 
+	   If the person is in office, use the NEW password.	
+ 
+Please follow these steps to reset it:
+1. If You Are Already Logged In:
+   - Press `Ctrl + Alt + Del`.
+   - Select "Switch User".
+   - On the other user screen, you will see an option to reset your password.
+   - Follow the on-screen instructions, which will ask you to enter your email or phone number.
+   - Once your password has been reset, use your old password to log in initially.
+2. For FortiClient:
+   - After resetting your password and logging in with your old password, you can then use the new password in FortiClient.
+
+Please let me know if this helps or if you want I can assist you over call as well 
+
+ 
+* COMMUNICATOR PASSWORD RESET:
+	1. Go to the link "https://cloud-ca.eclipsetechnology.com/myphonenext/"
+	2. Make sure the region is set to "CANADA"
+	3. Press "reset password" and enter the password of the CLIENT
+	4. Have the client reset their password from their email.
+		- The client's username is their email address.
+		- If the email is NOT sent, send the ticket to Collaboration with a note that the link above does not work.
+ 
+* ASSIGNING LOCAL ADMIN:
+	1. Go to the command prompt as administrator and enter "lusrmgr.msc"
+	2. Go to Groups > Administrators
+	3. Click ADD > Search for [Username] > Check Names > OK
+ 
+* WIFI DOES NOT WORK: 
+	1.  Go to Lenovo Support at "https://support.lenovo.com/us/en" > PC > Detect Product.
+		- Depending on the computer, you may get a prompt to install "Lenovo Service Bridge." If you receive this prompt, click on "here"
+		  and then download Lenovo Service Bridge
+		- Go to "Drivers & Software" > "Automatic Update" > "Scan Now"
+		- Download all given updates to all drivers on the device.
+		- Restart the device and try conncting to the WiFi.
+	2.  Press "Windows + I" to open the setting windows.
+		- In the search bar, type "Troubleshooting" and select the "Available Reccomended Troubleshooting"
+		- For each trouble shooting option ( if available ), select "Start Operation" > "Internet Connections"
+	3.  Go to the search bar and enter "cmd" and open the command prompt in administrator
+		- Enter the command "ipconfig /flusdns"
+		- Try reconnecting to the WiFi
+	4.  Inside your Chrome/Microsoft Edge web browser, enter "chrome://net-internals/#dns" into your search bar
+		- Click on the button "Clear host cache"
+		- Try reconnecting to the WiFi
+	5.  Press "Windows + X" to open the Windows Powershell (Admin)
+		- In the window, copy and column the operating commands below, pressing Enter at the end of each line.
+			  ipconfig /release [Enter]
+			  ipconfig /renew [Enter]
+			  ipconfig /flushdns [Enter]
+			  netsh winsock reset [Enter]
+			  net localgroup administrators localservice /add [Enter]
+			  fsutil resource setautoreset true C:\ [Enter]
+			  netsh int ip reset resetlog.txt [Enter]
+			  netsh winsock reset all [Enter]
+			  netsh int 6to4 reset all [Enter]
+			  netsh int ip reset all [Enter]
+			  netsh int ipv4 reset all [Enter]
+			  netsh int ipv6 reset all [Enter]
+			  netsh int httpstunnel reset all [Enter]
+			  netsh int tcp reset all [Enter]
+			  netsh int ip reset [Enter]
+			  netsh winsock reset [Enter]
+	6. Press "Windows + I" keys to open the Windows "Settings" menu
+		- Enter the item "Network and Internet"
+		- From the "Status" tab, looking for the "Network Reset" item and click on the it
+		- On the new screen, click on "Restore Now" and restart your computer as prompted.
+	7.  Press "Windows + I" keys to open the Windows "Settings" menu
+		- Go to "Network and Internet" > "Status" > "Network and Sharing Center"
+		- Go to "Change Adapter Settings" on the left side of the menu
+		- Right-click on the WiFi network adpater and select "Properties"
+		- Select "IP Protocol Version 4 (TCP/IP)" and then click properties.
+		- Click on "Use the following DNS server adresses" and type:
+			A. 8.8.8.8
+			B. 8.8.4.4.
+		- Check to validate the settings
+ 
+* SETTING MICROSOFT AUTHENTICATOR:
+	1. Install Microsoft Authenticator on the device you would like to setup Authenticator on.
+	2. Click on Start button> open settings
+	3. Click on Accounts> Email & accounts
+	4. Click on youremail@fsrao.ca > choose Manage
+	5. On https://myaccount.microsoft.com/ look for Security info on the left
+	6. Click Add sign-in method > from the Choose a method drop-down menu choose Authenticator App
+	7. Click Add> Next>Next> Scan the QR code on the mobile device you want to setup Authenticator
+	8. Scan the QR code> click Next
+	9. Approve sign-in on your mobile device
+	10. Your authenticator should be setup on the new device.
+	    Please let me know if this works!
+	    For any question or concern about this ticket please reply to all to this email and we will be happy to assist you.
+ 
+* INSTALLING SOFTWARE ( FAILS ):
+	1. Go to the command prompt AS ADMIN and enter "gpupdate /force"
+	2. Control Panel > Configuration Manager
+		A. Delete CACHED DATA: 
+			- Go to "Cache > Configure Settings > Delete Files"
+			- Check "Delete Persisted Files"
+			- Restart the computer
+		B. Run ACTIONS:
+			- Go to "Actions" and run EACH of the possible actions
+ 
+* INSTALLING MS PROJECT/MS VISIO:
+	1. Go to "portal.office.com" > "Install and more" > "Install Microsoft 365 Apps" > "Apps & Devices"
+	2. Download MS Project OR MS Visio
+ 
+* MICROSOFT TEAMS FFMPEG.DLL WAS NOT FOUND:
+	1. Uninstall ALL versions of teams + Make make no Teams services are running on boot-up/task manager.
+	2. Reboot the computer.
+	3. In the Windows search bar, type "run" and then inside the "run" program, type "%appdata%"
+	4. Go to the "Microsoft" folder and delete the folder named "Teams"
+	5. Run the Online Repair on Microsoft 365
+	6. Once the repair is successful, download Teams from "https://www.microsoft.com/en-ca/microsoft-teams/download-app"
+ 
+* PHONES: UPDATE CHERWELL
+	1. Find onboarding/offboarding ticket.
+	2. Enter the phone's SIM, PHONE #, and IMEI # ( in Phones "About" Tab ).
+ 
+* Investigations: Edit Driver
+	1. Ask Serah/Tarun for help because only they have write-access to the Drivers
+ 
+* FILE SHORTCUTS:
+	- RDP SESSION: "\\fsco\dfs\MSI\RDPSessions"
+	- HUNCHLY: "\\fsrao\dfs\CORP\IT\INSTALL\zThird-Party\Hunchly"
+	- RECENT FORTICLIENT: "\\fsrao\dfs\CORP\IT\INSTALL\Forticlient 7.2.5"
+	- ICON: (SETUP.EXE) "\\fsrao\dfs\MSI\Attachmate\myExtra Enterprise\7.11" ==> Download Software
+		(ICON.EDP) "\\fsrao\dfs\MSI\Attachmate\myExtra Enterprise\Sessions" ==> Drag & Drop to desktop
+	-V Drive: \\fsco-apps2\ACTUARY > then map
+ 
+Bell Internet Password: FSRA24-08!
+Safe Password: 5907

@@ -18,6 +18,13 @@ module.exports = async () => {
       rehypePlugins: []
     }
   });
-  
-  return withNextra(nextConfig);
+
+  // Add Webpack configuration
+  return withNextra({
+    ...nextConfig,
+    webpack: (config) => {
+      config.resolve.preferRelative = true;
+      return config;
+    },
+  });
 };
