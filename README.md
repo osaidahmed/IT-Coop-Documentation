@@ -1,3 +1,9 @@
+# IT Cooperative Documentation
+
+<div class="logo-container">
+  <img src="./images/fsra-logo.png" alt="FSRA Logo">
+</div>
+
 # FSRA IT Support Desk Documentation
 
 > A secure, ever-growing knowledge base for FSRA IT co-ops and support staff, built with Next.js & Nextra.

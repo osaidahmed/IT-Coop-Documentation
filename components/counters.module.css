@@ -1,6 +1,19 @@
 .counter {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 2px 6px;
-  margin: 12px 0 0;
+  background-color: var(--fsra-teal);
+  border: none;
+  color: rgb(10, 7, 7);
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.counter:hover {
+  background-color: var(--elm-blue);
+}
+
+.counter:active {
+  background-color: var(--dark-teal);
 }

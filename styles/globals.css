@@ -1,0 +1,134 @@
+:root {
+  /* FSRA Primary Palette */
+  --fsra-teal: #097F9E;
+  --dark-teal: #043F4F;
+  --elm-blue: #1E6F84;
+  --midnight-blue: #000066;
+  
+  /* FSRA Secondary Palette */
+  --indigo: #000AAA;
+  --havelock-blue: #316CC4;
+  --turquoise-blue: #01CDCE;
+  
+  /* FSRA Tertiary Palette */
+  --warm-yellow: #FFDC8D;
+  --mustard-yellow: #E6B419;
+  --deep-orange: #F05014;
+  
+  /* FSRA Neutral Palette */
+  --eggshell: #E8F1F0;
+  --pale-yellow: #FAEFC9;
+  --light-grey: #F0F0F0;
+  --pale-teal: #D6E8E5;
+  
+  /* Custom color scheme - light mode */
+  --nextra-primary-hue: 195;
+  --nextra-primary-saturation: 90%;
+  
+  /* Override Nextra colors with FSRA brand colors */
+  --nextra-primary-color: var(--fsra-teal);
+  
+  /* Customize background colors */
+  --nextra-bg-color: #ffffff;
+  --nextra-bg-secondary: var(--light-grey);
+  
+  /* Customize text colors */
+  --nextra-text-color: #111827;
+  --nextra-text-secondary: #4b5563;
+  
+  /* Customize border colors */
+  --nextra-border-color: var(--pale-teal);
+  
+  /* Customize code block styles */
+  --nextra-code-bg: var(--eggshell);
+  --nextra-code-border: var(--pale-teal);
+}
+
+[data-theme="dark"] {
+  /* Custom color scheme - dark mode */
+  --nextra-primary-hue: 195;
+  --nextra-primary-saturation: 90%;
+  
+  /* Override Nextra colors with FSRA brand colors */
+  --nextra-primary-color: var(--fsra-teal);
+  
+  /* Customize dark mode background colors */
+  --nextra-bg-color: #1f2937;
+  --nextra-bg-secondary: #111827;
+  
+  /* Customize dark mode text colors */
+  --nextra-text-color: #f9fafb;
+  --nextra-text-secondary: #d1d5db;
+  
+  /* Customize dark mode border colors */
+  --nextra-border-color: var(--dark-teal);
+  
+  /* Customize dark mode code block styles */
+  --nextra-code-bg: #111827;
+  --nextra-code-border: var(--dark-teal);
+}
+
+/* Set Arial as the main font family */
+body {
+  font-family: Arial, sans-serif !important;
+}
+
+/* Custom component styles */
+.nextra-container {
+  max-width: 90rem !important; /* Make content wider */
+}
+
+.nextra-nav-container {
+  background-color: var(--nextra-bg-color);
+  border-bottom: 1px solid var(--nextra-border-color);
+}
+
+.nextra-sidebar {
+  border-right: 1px solid var(--nextra-border-color);
+}
+
+/* Custom heading styles */
+.nextra-content h1 {
+  font-size: 2.5rem !important;
+  letter-spacing: -0.03em;
+  color: var(--fsra-teal);
+}
+
+.nextra-content h2 {
+  font-size: 1.75rem !important;
+  color: var(--dark-teal);
+}
+
+.nextra-content h3 {
+  color: var(--elm-blue);
+}
+
+/* Override link colors */
+.nextra-content a {
+  color: var(--havelock-blue);
+}
+
+.nextra-content a:hover {
+  color: var(--turquoise-blue);
+}
+
+/* Button styling */
+button.primary {
+  background-color: var(--fsra-teal);
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+}
+
+button.primary:hover {
+  background-color: var(--elm-blue);
+}
+
+/* Card styling */
+.card {
+  border-radius: 0.5rem;
+  border: 1px solid var(--nextra-border-color);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
