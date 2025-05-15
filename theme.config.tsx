@@ -2,19 +2,10 @@ import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
 import { useRouter } from 'next/router'
 import FSRALogo from './components/FSRALogo'
+import { components as mdxComponents } from './components/mdx-components'
 
 const config: DocsThemeConfig = {
   logo: <FSRALogo />,
-  project: {
-    link: 'https://github.com/shuding/nextra-docs-template',
-  },
-  chat: {
-    link: 'https://discord.com',
-  },
-  docsRepositoryBase: 'https://github.com/shuding/nextra-docs-template',
-  footer: {
-    text: 'Financial Services Regulatory Authority of Ontario - IT Support Documentation',
-  },
   // Enhanced theme customizations
   banner: {
     key: 'fsra-docs-release',
@@ -34,11 +25,13 @@ const config: DocsThemeConfig = {
     float: true,
     title: 'On This Page',
   },
+  // Force light mode only
+  darkMode: false,
+  theme: 'light',
   primaryHue: {
-    dark: 195,
     light: 195,
   },
-  // FSRA blue colors based on the provided colors
+ 
   useNextSeoProps() {
     const { asPath } = useRouter()
     return {
@@ -58,6 +51,22 @@ const config: DocsThemeConfig = {
       `}</style>
     </>
   ),
+  search: {
+    placeholder: 'Search FSRA IT Docs...',
+    inputProps: {
+      style: {
+        borderRadius: '8px',
+        border: '1px solid #0072CE',
+        padding: '8px 12px',
+        background: '#f7fafc',
+        color: '#003366',
+        fontSize: '5rem',
+      },
+    },
+  },
+  docs: {
+  },
+  components: mdxComponents,
 }
 
 export default config

@@ -44,30 +44,6 @@
   --nextra-code-border: var(--pale-teal);
 }
 
-[data-theme="dark"] {
-  /* Custom color scheme - dark mode */
-  --nextra-primary-hue: 195;
-  --nextra-primary-saturation: 90%;
-  
-  /* Override Nextra colors with FSRA brand colors */
-  --nextra-primary-color: var(--fsra-teal);
-  
-  /* Customize dark mode background colors */
-  --nextra-bg-color: #1f2937;
-  --nextra-bg-secondary: #111827;
-  
-  /* Customize dark mode text colors */
-  --nextra-text-color: #f9fafb;
-  --nextra-text-secondary: #d1d5db;
-  
-  /* Customize dark mode border colors */
-  --nextra-border-color: var(--dark-teal);
-  
-  /* Customize dark mode code block styles */
-  --nextra-code-bg: #111827;
-  --nextra-code-border: var(--dark-teal);
-}
-
 /* Set Arial as the main font family */
 body {
   font-family: Arial, sans-serif !important;
