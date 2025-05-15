@@ -7,9 +7,10 @@ const FSRALogo = () => {
         src="/images/fsra-logo.png" 
         alt="FSRA Logo" 
         style={{
-          maxWidth: '180px',
+          maxWidth: '110px',
           height: 'auto',
-          marginBottom: '8px'
+          marginBottom: '0px',
+          marginTop: '5px',
         }}
       />
     </div>
