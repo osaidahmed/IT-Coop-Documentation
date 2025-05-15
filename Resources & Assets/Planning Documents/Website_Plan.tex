@@ -1,0 +1,206 @@
+% --- PROJECT PLANNING OUTLINE FOR FSRA IT SUPPORT DESK WEBSITE ---
+\documentclass[11pt,a4paper]{article}
+\usepackage{mystyle}  % centralized styling
+
+\title{Website Development Plan: IT Co-op Documentation}
+\author{Omar Saidahmed}
+
+\begin{document}
+
+\maketitle
+\begin{center}
+  \textbf{Document Version:} 2.0 \\
+  \textbf{Last Updated:} May 8th, 2025 \\
+\end{center}
+\vspace{0.5cm}
+\hrulefill
+\vspace{1cm}
+
+\tableofcontents
+\newpage
+
+% --- CORE SECTIONS ---
+
+\section{Executive Summary \& Project Overview}
+
+\subsection{Project Mission \& Vision}
+The FSRA IT Support Desk Documentation Website is designed to be a secure, internal knowledge platform accessible only to users with a valid FSRA email domain. Its vision is to become an evolving, living archive that enables seamless onboarding of IT co-op students and captures institutional knowledge for long-term retention. This system aims to eliminate reliance on verbal instruction and reactive learning by mistake, shifting toward proactive documentation and simplified access.
+
+\subsection{Goals \& Objectives}
+The project seeks to solve the long-standing challenge of onboarding IT co-ops by providing a centralized, version-controlled knowledge hub. By making it simple for contributors to submit updates—such as PDFs or TXT documents—the site ensures ongoing documentation refinement. Objectives include: (1) reducing full-time staff time spent on repeated training, (2) preserving procedural knowledge, (3) improving asset management awareness, and (4) enabling future enhancements that scale with the department’s needs.
+
+\subsection{Target Audience}
+The primary audience includes FSRA IT co-op students and interns who require structured onboarding. Secondary users include full-time IT desk staff who may use the documentation for reference or contribute updates. Supervisors and technical leads are tertiary users overseeing content quality and access management.
+
+\subsection{Scope of Work}
+The initial scope covers internal-only access, basic markdown or file-based documentation uploads, and a workflow for change requests or additions. A searchable interface will be included. Ticketing system integration is out of scope for this phase, as the current system (Cherwell) is still in place and may be replaced in the future.
+
+\subsection{Assumptions \& Constraints}
+It assume all users will have an FSRA domain email and that basic file literacy is in place (e.g., PDF, TXT submissions). The project is constrained by existing infrastructure (e.g., current ticket system, internal hosting) and must remain lightweight for easy maintenance.
+
+\section{Content Strategy \& Information Architecture}
+
+\subsection{Content Requirements}
+Content will include setup instructions, troubleshooting steps, asset management guidelines, and co-op onboarding documentation. Users will be able to contribute content through PDF, TXT, or structured markdown uploads.
+
+\subsection{Information Architecture (IA)}
+Top-level sections will include: Getting Started, Cherwell, Asset Management, Wireless and VPN, Software's, Print, Scan, and Fax, Zoom, Passwords, Mobile, Onboardings and Offboardings, Kiteworks, and Audio Visuals. Each section will house pages with uniform structure. Navigation will remain flat for simplicity, with breadcrumbs and a search function for usability. Implementation of a intergated chatbot is possible.
+
+\section{Design \& User Experience (UX/UI)}
+
+\subsection{Branding \& Visual Identity}
+The site will follow FSRA branding where possible but emphasize minimalism and clarity. Colors will reflect the internal IT aesthetic, and visuals will be limited to essential icons and structure.
+
+\subsection{User Experience (UX) Design}
+The user experience is designed to be straightforward. Co-ops must be able to find and understand content in seconds. Simple forms will enable change requests, and a review process will maintain content quality.
+
+\subsection{User Interface (UI) Design}
+The UI will be based on a modern web framework (such as React or Vue), with a clean interface and collapsible sections. File upload and navigation tools will be clear and easy to locate.
+
+\subsection{Accessibility (A11y)}
+While internal, the site will aim to meet WCAG 2.1 AA standards to ensure accessibility for users with visual or motor impairments.
+
+\subsection{Responsive Design}
+The platform will adopt a mobile-first responsive layout to ensure readability and interaction across laptops, tablets, and phones.
+
+\section{Technical Specifications \& Development}
+  \subsection{Technology Stack}
+    The website will be built using the Next.js framework, offering high performance, server-side rendering, and static site generation capabilities. It will use \textbf{Nextra}, a documentation-focused site generator that extends MDX, enabling rich content editing and React component integration directly in documentation pages. We’ll also use \textbf{TypeScript} throughout to provide static typing, catch errors early, and improve developer experience. This stack ensures simplicity, extensibility, and maintainability over time.
+
+    \begin{itemize}
+      \item \textbf{Frontend:} Next.js with MDX via Nextra
+      \item \textbf{Language:} TypeScript for type safety and improved IDE support
+      \item \textbf{Component Framework:} Tailwind CSS for utility-first styling
+      \item \textbf{React-Based UI:} Allows developers to extend documentation functionality with React components
+    \end{itemize}
+
+  \subsection{Hosting \& Domain}
+    The site will be deployed using GitHub Pages or Vercel for ease of integration with Git workflows. Only users authenticated with an institutional email domain (e.g., \texttt{@fsra.ca}) will be granted access, either through SSO or email domain verification middleware.
+
+  \subsection{Features \& Functionalities}
+    \begin{itemize}
+      \item Rich markdown editing with embedded components
+      \item Access control for submission and editing
+      \item Form-based and document-based content submission (e.g., PDF, .txt)
+      \item Comment or suggestion system for change requests
+    \end{itemize}
+
+  \subsection{Database Design}
+    No traditional database is initially required due to static site generation. Submitted documents and change requests may be stored in a structured flat-file format or Git-based storage. For more advanced features, integration with a lightweight backend (e.g., Firebase or Supabase) could be explored.
+
+  \subsection{Security Plan}
+    \begin{itemize}
+      \item Authentication restricted by email domain or Single Sign-On (SSO)
+      \item Middleware to block unauthorized users at the routing layer
+      \item HTTPS enforced by default via Vercel or GitHub Pages
+      \item Git-based versioning ensures full content audit trail
+      \item Regular dependency audits and static code analysis
+    \end{itemize}
+
+  \subsection{Performance Optimization Plan}
+    \begin{itemize}
+      \item Static site generation via Nextra ensures fast page loads
+      \item Built-in image and asset optimization from Next.js
+      \item Minimal JavaScript bundling with tree-shaking and prefetching
+    \end{itemize}
+
+  \subsection{Development Environment \& Workflow}
+    \begin{itemize}
+      \item Local development with Next.js dev server
+      \item Git-based collaboration and deployment workflow
+      \item CI/CD setup via GitHub Actions or Vercel pipeline
+      \item Incremental adoption of more advanced features through MDX and custom components
+    \end{itemize}
+
+
+\section{Deployment \& Launch Plan}
+
+\subsection{Pre-Launch Checklist}
+\begin{itemize}
+  \item Secure domain and configure SSO
+  \item Create initial content pages
+  \item Test file upload and review flow
+  \item Final internal stakeholder review
+\end{itemize}
+
+\subsection{Launch Strategy}
+A soft launch will begin with one cohort of co-ops. Feedback will be gathered before scaling to all future co-op intakes.
+
+\subsection{Post-Launch Monitoring}
+Analytics will track usage patterns and submissions. Manual review logs will assess quality and identify gaps.
+
+\section{Post-Launch Maintenance \& Iteration}
+
+\subsection{Maintenance Plan}
+The content owner will ensure quarterly reviews, with technical staff handling backend updates as needed.
+
+\subsection{Future Enhancements \& Iteration Plan}
+Planned improvements include:
+\begin{itemize}
+  \item Full CMS integration
+  \item Feedback rating on documents
+  \item Expansion to all FSRA internal teams (beyond IT)
+\end{itemize}
+
+\section{Project Management \& Team}
+
+\subsection{Developer}
+  Omar Saidahmed (as of V1.0). Future developers will be onboarded as needed.
+
+\subsection{Timeline \& Milestones}
+\begin{itemize}
+  \item Week 1: Define structure and setup repo
+  \item Week 2: Build prototype and begin documentation
+  \item Week 3: Internal soft launch
+  \item Week 4+: Iterative content and process updates
+\end{itemize}
+
+\subsection{Budget \& Resource Allocation}
+No external budget required. Uses internal resources. Time allocation focused on initial development, then low ongoing maintenance.
+
+\section{Legal \& Compliance}
+
+\subsection{Privacy Policy}
+Only internal FSRA users have access. No personal or sensitive customer data is stored.
+
+\subsection{Terms \& Conditions}
+Internal FSRA use only. All content must follow FSRA acceptable use and confidentiality guidelines.
+
+\subsection{Cookie Policy \& Consent Mechanism}
+Minimal cookies will be used for session management only. No third-party tracking.
+
+\subsection{Copyright \& Intellectual Property}
+All contributions are property of FSRA. Contributors agree to license submissions for organizational use.
+
+\subsection{Accessibility Compliance}
+WCAG 2.1 AA standards will be followed to the extent feasible with internal resources.
+
+\subsection{Other Regulations}
+None applicable in this scope (no public access or transactional features).
+
+\section{Risk Assessment \& Mitigation}
+
+\subsection{Potential Risks}
+\begin{itemize}
+  \item Low adoption by new co-ops
+  \item Content becomes outdated
+  \item Delays in SSO or infrastructure setup
+\end{itemize}
+
+\subsection{Likelihood \& Impact}
+Moderate likelihood of delays; high impact if content is not maintained.
+
+\subsection{Mitigation Strategies \& Contingency Plans}
+\begin{itemize}
+  \item Assign clear content owners
+  \item Build feedback form to highlight outdated or unclear docs
+  \item Use plain PDF delivery if web infrastructure is delayed
+\end{itemize}
+
+\section{Conclusion \& Next Steps}
+\begin{itemize}
+  \item Finalize architecture and file submission standards
+  \item Begin content population with current knowledge
+\end{itemize}
+If the project is successful, it would be beneficial to consider expanding the platform to other departments within FSRA.
+\end{document}

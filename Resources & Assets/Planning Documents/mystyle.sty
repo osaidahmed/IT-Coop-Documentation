@@ -1,0 +1,44 @@
+% mystyle.sty
+\ProvidesPackage{mystyle}[2025/05/09 FSRA IT Support Desk documentation style]
+
+% —— Encoding & Fonts ——
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+
+% —— Math support ——
+\RequirePackage{amsmath}
+\RequirePackage{amsfonts}
+\RequirePackage{amssymb}
+
+% —— Layout & lists & URLs ——
+\RequirePackage[margin=1in]{geometry}
+\RequirePackage{enumitem}
+\RequirePackage{url}
+
+% —— Headers / Footers ——
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Website Development Plan}
+\fancyhead[R]{\nouppercase{\leftmark}}
+\fancyfoot[C]{\thepage}
+\setlength{\headheight}{14pt}
+% —— Hyperref & link styling ——
+% load hyperref last
+\RequirePackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  filecolor=magenta,
+  urlcolor=cyan,
+  pdftitle={Website Development Plan},
+  pdfauthor={Omar Saidahmed / FSRA IT Team},
+  pdfsubject={Website Planning Document},
+  pdfkeywords={website, development, plan, project},
+  bookmarks=true,
+  bookmarksopen=true
+}
+
+% —— Section numbering & TOC depth ——
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{2}

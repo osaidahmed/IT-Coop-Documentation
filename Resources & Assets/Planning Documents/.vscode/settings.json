@@ -1,0 +1,7 @@
+{
+  // open the PDF in a VS Code tab
+  "latex-workshop.view.pdf.viewer": "tab",
+
+  // auto-open it right after a successful build
+  "latex-workshop.view.pdf.onBuild": true
+}

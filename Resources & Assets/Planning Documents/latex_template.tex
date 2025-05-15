@@ -1,0 +1,43 @@
+% --- LaTeX DOCUMENT TEMPLATE USING CENTRAL STYLE FILE ---
+\documentclass[11pt,a4paper]{article}
+
+% Load centralized formatting and macros
+% Ensure mystyle.sty lives in the project root or TEXINPUTS path
+\usepackage{mystyle}    % mystyle.sty holds all package imports, geometry, headers, macros
+
+% Document metadata (override as needed)
+\title{<Document Title>}
+\author{<Author Name/Team>}
+\date{\today}
+
+\begin{document}
+
+% Title section
+\maketitle
+\hrulefill
+\vspace{1em}
+
+% Table of Contents
+\tableofcontents
+\newpage
+
+%--- INCLUDE CONTENT SECTIONS BELOW ---
+% Organize your content into separate files under a "sections/" folder
+% Example structure:
+% sections/
+%   introduction.tex
+%   scope.tex
+%   content_strategy.tex
+%   technical_architecture.tex
+%   timeline.tex
+
+% To include them:
+\input{sections/introduction.tex}
+\input{sections/scope.tex}
+\input{sections/content_strategy.tex}
+\input{sections/technical_architecture.tex}
+\input{sections/timeline.tex}
+
+%--- END OF CONTENT ---
+
+\end{document}
