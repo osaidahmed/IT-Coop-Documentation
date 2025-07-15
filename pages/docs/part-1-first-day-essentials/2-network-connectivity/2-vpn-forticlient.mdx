@@ -1,4 +1,98 @@
-# Vpn Forticlient
-    * Initial VPN Setup and Login
-    * Understanding FortiToken 2FA (Corporate vs. Personal Phones)
-    * Connecting with New vs. Old Passwords
+# VPN (FortiClient)
+
+<hr className="my-4 border-slate-600"/>
+
+## Overview
+
+The FortiClient Virtual Private Network (VPN) secures your connection to FSRA's
+internal network when you are working remotely. You must be connected to the VPN
+to access shared drives, internal applications, and other resources that are not
+publicly available.
+
+## Prerequisites
+
+Before you can connect, you must have the following set up:
+
+* **FortiClient Installed:** The `FortiClient` application must be installed on
+    your laptop. It should be available via Software Center if it's missing.
+* **FortiToken Configured:** You must have set up Two-Factor Authentication
+    (2FA) using the FortiToken app on either your mobile device or your Windows
+    laptop. You will have received an activation email from "FortiAuthenticator"
+    to complete this setup.
+
+## Quick-start: Connecting after login
+
+This is the most common method for connecting to the VPN after you have already
+logged into your computer.
+
+1.  Ensure you are connected to a stable Wi-Fi network.
+2.  Open the **FortiClient** application from your desktop or Start Menu.
+    ![FortiClient Desktop Icon](/images/forticlient-desktop-icon.png)
+3.  Navigate to the **REMOTE ACCESS** tab on the left.
+4.  Enter your FSRA username and password (e.g. sjoo).
+    <Warning>Your username must be all lowercase for the authentication to succeed.</Warning>
+5.  Open the **FortiToken** app on your mobile device or laptop to get the
+    current 6-digit code.
+    ![FortiClient Remote Access Tab](/images/forticlient-remote-access-tab.png)
+6.  Enter the 6-digit code into the **Token** field in FortiClient and click
+    **Connect**.
+   
+
+
+## How it works
+
+The VPN works by creating an encrypted tunnel from your computer to the FSRA
+network. Authentication is a two-step process involving your password and a
+time-sensitive token.
+
+### Two-Factor Authentication (2FA) with FortiToken
+
+Two-Factor Authentication (2FA) adds a critical layer of security. The **FortiToken** application generates
+a new 6-digit code every 60 seconds. You must provide this code in addition to
+your password to verify your identity.
+
+* **Mobile App (Recommended):** The `FortiToken Mobile` app is available on
+    the App Store (iOS) and Google Play Store (Android). During initial setup,
+    you activate it by scanning the QR code from the activation email.
+    ![FortiToken Mobile App](/images/fortitoken-mobile-app.png) 
+* **Windows App:** For users without a smartphone, the `FortiToken Windows` app
+    can be installed from the Microsoft Store. It is activated by manually
+    entering the 16-digit code from the activation email. 
+    ![Windows Sign-in Options](/images/windows-signin-options.png)
+### Connecting from the Windows logon screen
+
+This method establishes a VPN connection *before* you log in to Windows. This is
+useful for syncing a new password for the first time while working remotely.
+
+1.  On the Windows sign-in screen, click **Sign-in options**.
+2.  Select the **FortiClient logo** (a shield icon) from the available options.
+3.  Enter your username and password.
+4.  When the "VPN Login" window appears, enter the 6-digit code from your
+    FortiToken app.
+5.  Click **OK**. Once connected, Windows will proceed to log you in.
+
+## Troubleshooting
+
+| Symptom                                                     | Likely Cause                                                              | Fix                                                                                                                                                            |
+| ----------------------------------------------------------- | ------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| "Wrong Credentials" error when trying to connect.           | Password expired, account locked, or username entered with incorrect case. | Verify the user's account status in Active Directory. Ensure the username is entered in all lowercase. See [Troubleshooting Account Lockouts]. |
+| Applications like Outlook or Teams repeatedly ask for password. | The VPN connection was lost or not established before opening apps.       | Close all applications completely (right-click and Quit from the system tray). Confirm your VPN status is "Connected" in the FortiClient app, then reopen your applications. |
+| FortiClient fails to install or gets stuck.                 | A previous installation was corrupted.                                    | A technician may need to manually remove registry keys for FortiClient before attempting a reinstall. See `KB_00009_Incident_ Uninstalling VPN using Regedit.pdf`. |
+
+## See also
+
+* [Your accounts & credentials](./1-accounts-and-credentials.mdx)
+* [Troubleshooting network & VPN connectivity](../../part-5-troubleshooting-guides/13-network-and-vpn/1-cannot-connect-to-vpn.mdx)
+
+<hr className="my-8 border-slate-600"/>
+
+## Sources
+
+* **FSRA How to Service Desk Co-op.docx** (Sarah Joo)
+* **KB_00018_Request_VPN Manual login.pdf** (Raphael Monje)
+* **KB_00019_Request_VPN Sign in options login.pdf** (Raphael Monje)
+* **KB_00021_Request_2FA for VPN Corporate Phones v1.2.pdf** (IT - Service Desk)
+* **KB_00033_Request_Two Factor Authentication(2FA) for VPN - Desktop Application.pdf** (IT - Service Desk)
+* **KB_00034_Request_Two Factor Authentication(2FA) for VPN - Personal Mobile Phones.pdf** (IT - Service Desk)
+* **KB_00002_Incident_Confirm VPN Connectivity.pdf** (IT Service Desk)
+* **KB_00009_Incident_ Uninstalling VPN using Regedit.pdf** (Serah Majekodunmi)

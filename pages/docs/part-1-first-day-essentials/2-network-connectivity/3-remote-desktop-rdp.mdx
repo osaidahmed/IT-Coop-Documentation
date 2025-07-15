@@ -1,4 +1,65 @@
-# Remote Desktop Rdp
-    * Connecting to the `grds-01` Server
-    * Using your `sdesk_` Credentials
-    * Signing Out Other Users from RD
+# Remote Desktop (RDP)
+
+<hr className="my-4 border-slate-600"/>
+
+## Overview
+
+This page explains how to connect to the primary administrative server (`grds-01`)
+using Remote Desktop Protocol (RDP). You will use this connection to access
+core management tools like Active Directory and SCCM.
+
+## Prerequisites
+
+* You must be connected to the FSRA corporate network, either directly in the
+    office or via the [VPN (FortiClient)](./2-vpn-forticlient.mdx).
+* You need your Service Desk Admin (`sdesk_`) account credentials.
+
+## Quick-start
+
+1.  Open the **Remote Desktop Connection** application on your computer.
+2.  In the `Computer` field, enter `grds-01`.
+3.  Click **Connect**.
+4.  When prompted for credentials, select **More choices** > **Use a different account**.
+5.  Enter your Service Desk Admin username (e.g., `FSRAO\sdesk_sjoo`) and your
+    corresponding password.
+6.  Click **OK** to establish the connection.
+<Warning>
+  Your `sdesk_` admin account is protected by Microsoft Authenticator 2FA. When
+  using it for administrative actions (e.g., on another user's laptop or via RDP),
+  you will be periodically prompted for a 6-digit OTP.
+
+  This authentication prompt can sometimes be buggy and cause the "Enter
+  Credentials" screen to freeze. If this happens, press `Ctrl+Alt+Del` to escape.
+  After escaping, you might see one of two outcomes:
+  1. The OTP screen appears correctly. If so, enter the code to proceed.
+  2. You are returned to your desktop with no new window. If so, re-initiate the
+     admin action and repeat the `Ctrl+Alt+Del` escape process until the OTP
+     prompt appears.
+</Warning>
+## How it works
+
+Remote Desktop gives you a virtual desktop session on the `grds-01` server. This
+server hosts the administrative consoles for many of our core systems. By
+connecting to it, you can manage users and devices without installing these
+tools directly on your own laptop.
+
+
+## Troubleshooting
+
+| Symptom                                                     | Likely Cause                                                              | Fix                                                                                                                                                            |
+| ----------------------------------------------------------- | ------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| "Remote Desktop can't connect to the remote computer..."    | Not connected to the corporate network or a typo in the server name.      | Verify your connection status in the FortiClient VPN app. Ensure the computer name is exactly `grds-01` with no extra spaces.                                   |
+| "The logon attempt failed."                                 | Incorrect password or using the wrong account format.                     | Re-enter your password carefully. Ensure you are using your `sdesk_` account and have specified the domain: `FSRAO\sdesk_username`.                             |
+
+## See also
+
+* [VPN (FortiClient)](./2-vpn-forticlient.mdx)
+* [Active Directory (AD) Management](../../part-2-core-tools/3-active-directory/1-introduction-to-ad.mdx)
+* [SCCM & Remote Management](../../part-2-core-tools/5-sccm-and-remote-management/1-sccm-basics.mdx)
+
+<hr className="my-8 border-slate-600"/>
+
+## Sources
+
+* **FSRA How to Service Desk Co-op** (Sarah Joo)
+* **INSTRUCTIONS** (Service Desk Team)

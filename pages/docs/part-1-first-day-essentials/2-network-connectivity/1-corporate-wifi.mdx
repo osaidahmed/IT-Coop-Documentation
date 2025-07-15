@@ -1,5 +1,100 @@
-# Corporate Wifi
-    * Connecting to `FSRA-WIFI`
-    * Connecting to `FSRAO-Mobile`
-    * Connecting to Guest Wi-Fi
-    * Connecting to Bell_Internet
+
+# Corporate & Guest Wi-Fi
+
+## Overview
+
+This page provides instructions for connecting to FSRA's primary wireless
+networks. `FSRAO-WIFI` is the secure, internal network for employee devices,
+while `FSRAO-GUEST` is for all non-FSRA devices and visitors.
+
+## Connecting to FSRAO-WIFI (Corporate Network)
+
+This is the primary network for all work-related activities. The connection
+method differs between domain-joined laptops and mobile devices.
+
+### FSRA Laptops
+
+Your FSRA-issued laptop connects to `FSRAO-WIFI` automatically. It is part of
+the domain and requires no manual setup.
+
+### Mobile Phones & Non-Domain Devices
+
+You must manually connect personal or non-domain devices using your FSRA
+network credentials.
+
+<Note> 
+Turn Off Mobile Data
+Before connecting your phone, ensure that Mobile Data and/or Personal Hotspot
+are turned off to prevent connection issues.
+</Note>
+#### **Connecting an Android Device**
+
+1.  Navigate to `Settings > Connections > Wi-Fi`.
+2.  Select `FSRAO-WIFI` from the list of available networks.
+3.  Configure the connection settings as follows:
+    * **EAP method:** `PEAP`
+    * **Identity:** Your full work email address (e.g., `omar.saidahmed@fsrao.ca`)
+    * **Password:** Your current Windows login password.
+    * **CA certificate:** Select `Don't validate`. You can ignore any privacy warnings.
+4.  Click **Connect**.
+
+#### **Connecting an iOS Device**
+
+1.  Navigate to `Settings > Wi-Fi`.
+2.  Select `FSRAO-WIFI` from the list of "Other Networks".
+3.  Enter your credentials when prompted:
+    * **Username:** Your full work email address (e.g., `omar.saidahmed@fsrao.ca`)
+    * **Password:** Your current Windows login password.
+4.  Click **Join**.
+5.  A certificate prompt will appear. Tap **Trust** in the top-right corner to
+    complete the connection.
+
+#### **After a Password Change**
+
+When you change your Windows password, you must update it on your mobile devices.
+The Wi-Fi may appear connected but will lack internet access.
+
+* **Android:** The system will not prompt you. You must "forget" the
+    `FSRAO-WIFI` network and reconnect using the steps above with your new
+    password.
+* **iOS:** Open a work application like Teams or Outlook. You will be prompted
+    to re-enter your password. Once you sign in, network access will be restored.
+
+## Connecting to FSRAO-GUEST (Guest Network)
+
+The guest network is for non-FSRA devices and visitors. It requires a quick
+self-registration process.
+
+### Quick-start
+
+1.  Select `FSRAO-GUEST` from the list of available networks. No password is
+    required to join.
+2.  A captive portal (login page) should open automatically. If it doesn't, open
+    a web browser and try to navigate to any site.
+3.  On the portal page, click the link that says **"Do you require access to FSRA Guest-WiFi? Click Here"**.
+4.  Complete the **Self-Registration** form with your full name, phone number,
+    and a personal email address. Accept the terms and click **Register**.
+5.  You will receive your guest credentials (username and password) via the email
+    and phone number you provided.
+6.  Return to the portal's main login screen, enter the credentials you just
+    received, accept the terms, and click **Log In**.
+<Note>
+30-Day Access
+
+Guest access is valid for 30 days on up to two devices. After logging in once,
+your device should reconnect automatically for the duration of the access period.
+</Note>
+## See also
+
+* [Your accounts & credentials](./1-accounts-and-credentials.mdx)
+* [VPN (FortiClient)](../2-vpn-forticlient.mdx)
+
+<hr className="my-8 border-slate-600"/>
+
+## Sources
+
+* **Connecting to FSRAO-WiFi** (Ayush Parmar)
+* **Connecting to FSRAO-Guest WiFi** (Tarunveer Singh, Ayush Parmar)
+* **KB_00050_Request_Connect to FSRA WIFI at 25 Sheppard** (Tarunveer Singh)
+* **KB_00051_Request_Connect to Guest Wifi at 25 Sheppard** (Jenish Peshavariya, Ayush Parmar, Tarunveer Singh)
+* **KB_00054_Request_Connecting work phone to FSRAO-WiFi** (IT Service Desk)
