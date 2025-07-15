@@ -27,7 +27,10 @@ const config: DocsThemeConfig = {
   },
   // Force light mode only
   darkMode: false,
-  theme: 'light',
+  nextThemes: {
+    defaultTheme: 'light',
+    forcedTheme: 'light'
+  },
   primaryHue: {
     light: 195,
   },
@@ -53,16 +56,6 @@ const config: DocsThemeConfig = {
   ),
   search: {
     placeholder: 'Search FSRA IT Docs...',
-    inputProps: {
-      style: {
-        borderRadius: '8px',
-        border: '1px solid #0072CE',
-        padding: '8px 12px',
-        background: '#f7fafc',
-        color: '#003366',
-        fontSize: '5rem',
-      },
-    },
   },
   docs: {
   },
